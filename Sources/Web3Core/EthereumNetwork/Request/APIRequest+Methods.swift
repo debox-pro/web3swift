@@ -132,7 +132,7 @@ extension APIRequest {
 
     public static func send(uRLRequest: URLRequest, with session: URLSession) async throws -> Data {
         let (data, response) = try await session.data(for: uRLRequest)
-        
+
         guard let httpResponse = response as? HTTPURLResponse else {
             throw Web3Error.unknownError
         }
